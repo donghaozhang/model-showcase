@@ -1,25 +1,5 @@
-# Other project folders
-GroundCUA_7-Zip/
-GroundCUA_dataset/
-cell-annotator/
-dog/
-engine_animations/
-macos-web/
-pikachu_dark_knight_animations/
-poetiq-arc-agi-solver/
-qwen3_vl_project/
-red-segmentation-app/
-super_mario/
-switch_zelda_animations/
-tax/
-
-# Other files
-878c5990-c0c0-459f-af61-97adf3845198.webm
-CLAUDE.md
-Codex调用书.md
-download_dataset.py
-impressive_examples.md
-qwen3_vl.pdf
+# Archive folder (contains other projects)
+archive/
 
 # Common ignores
 *.log

@@ -1,12 +1,34 @@
 ---
 name: FFmpeg Media Processing
-description: Process, convert, and manipulate audio and video files using FFmpeg commands
+description: Use when user asks to convert, compress, trim, resize, extract audio, add subtitles, create GIFs, or process video/audio files
 dependencies: ffmpeg
 ---
 
 # FFmpeg Media Processing Skill
 
 FFmpeg is a universal media converter that reads from multiple inputs, applies filters/transformations, and writes to multiple outputs.
+
+## When to Use This Skill
+
+Invoke this skill when the user wants to:
+- Convert video/audio formats (MP4, MKV, WebM, MP3, etc.)
+- Compress or resize videos
+- Trim, cut, or merge media files
+- Extract audio from video
+- Add subtitles or text overlays
+- Create GIFs from video
+- Adjust speed, rotate, crop, or apply effects
+- Stream media (HLS, DASH, RTMP)
+
+## Example Inputs/Outputs
+
+| User Says | Claude Does |
+|-----------|-------------|
+| "Convert video.mkv to mp4" | `ffmpeg -i video.mkv output.mp4` |
+| "Extract audio from movie.mp4" | `ffmpeg -i movie.mp4 -vn audio.mp3` |
+| "Compress this video" | `ffmpeg -i input.mp4 -crf 23 output.mp4` |
+| "Make a GIF from the first 5 seconds" | `ffmpeg -t 5 -i input.mp4 -vf "fps=10,scale=320:-1" output.gif` |
+| "Add subtitles to my video" | `ffmpeg -i input.mp4 -vf subtitles=subs.srt output.mp4` |
 
 ## Additional Resources
 

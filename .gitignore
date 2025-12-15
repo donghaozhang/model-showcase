@@ -1,6 +1,9 @@
 # Archive folder (contains other projects)
 archive/
 
+# Generated test output files
+ffmpeg-demo/generated/
+
 # Common ignores
 *.log
 *.tmp

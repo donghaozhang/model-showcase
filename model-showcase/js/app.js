@@ -87,53 +87,6 @@ function initCardGlowEffect() {
 }
 
 // ============================================
-// Load Models from Markdown Files
-// ============================================
-async function loadModelsFromMarkdown() {
-    const modelCategories = {
-        'text-to-video': '.model-card:nth-child(1) .supported-models',
-        'image-to-video': '.model-card:nth-child(2) .supported-models',
-        'text-to-image': '.model-card:nth-child(3) .supported-models',
-        'transcription': '.model-card:nth-child(4) .supported-models'
-    };
-
-    for (const [category, selector] of Object.entries(modelCategories)) {
-        try {
-            const response = await fetch(`docs/technical/ai-models/${category}/supported-models.md`);
-            if (response.ok) {
-                const markdown = await response.text();
-                const models = extractModels(markdown);
-                updateModelList(selector, models);
-            }
-        } catch (error) {
-            console.error(`Failed to load models for ${category}:`, error);
-        }
-    }
-}
-
-function extractModels(markdown) {
-    const models = [];
-    const lines = markdown.split('\n');
-
-    for (let i = 0; i < lines.length; i++) {
-        const line = lines[i];
-        if (line.match(/^### \d+\./)) {
-            const modelName = line.replace(/^### \d+\.\s*/, '').trim();
-            models.push(modelName);
-        }
-    }
-
-    return models.slice(0, 5);
-}
-
-function updateModelList(selector, models) {
-    const listElement = document.querySelector(selector);
-    if (listElement && models.length > 0) {
-        listElement.innerHTML = models.map(model => `<li>${model}</li>`).join('');
-    }
-}
-
-// ============================================
 // Initialize All Features
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -141,7 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initParallaxParticles();
     initCardGlowEffect();
-    loadModelsFromMarkdown();
 
     console.log('QCut AI Models Showcase loaded successfully!');
 });

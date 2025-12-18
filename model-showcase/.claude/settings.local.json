@@ -12,7 +12,10 @@
       "Bash(git ls-tree:*)",
       "Bash(git fetch:*)",
       "Bash(git pull:*)",
-      "mcp__playwright__browser_run_code"
+      "mcp__playwright__browser_run_code",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_snapshot"
     ]
   }
 }

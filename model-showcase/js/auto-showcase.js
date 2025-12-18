@@ -133,6 +133,18 @@ style.textContent = `
     .model-card.force-hover {
         transform: translateY(-8px);
     }
+
+    /* Trigger list item animations for force-hover */
+    .model-card.force-hover .supported-models li {
+        animation: typeIn 0.4s ease-out forwards;
+    }
+
+    .model-card.force-hover .supported-models li:nth-child(1) { animation-delay: 0.15s; }
+    .model-card.force-hover .supported-models li:nth-child(2) { animation-delay: 0.25s; }
+    .model-card.force-hover .supported-models li:nth-child(3) { animation-delay: 0.35s; }
+    .model-card.force-hover .supported-models li:nth-child(4) { animation-delay: 0.45s; }
+    .model-card.force-hover .supported-models li:nth-child(5) { animation-delay: 0.55s; }
+    .model-card.force-hover .supported-models li:nth-child(6) { animation-delay: 0.65s; }
 `;
 document.head.appendChild(style);
 
